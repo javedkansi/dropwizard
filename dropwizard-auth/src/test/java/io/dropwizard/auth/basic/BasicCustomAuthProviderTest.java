@@ -10,6 +10,7 @@ import java.security.Principal;
 public class BasicCustomAuthProviderTest extends AuthBaseTest<BasicCustomAuthProviderTest.BasicAuthTestResourceConfig> {
 
     public static class BasicAuthTestResourceConfig extends AuthBaseResourceConfig{
+        @Override
         protected ContainerRequestFilter getAuthFilter() {
             BasicCredentialAuthFilter.Builder<Principal> builder  = new BasicCredentialAuthFilter.Builder<>();
             builder.setAuthorizer(AuthUtil.getTestAuthorizer(ADMIN_USER, ADMIN_ROLE));

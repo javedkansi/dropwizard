@@ -9,8 +9,10 @@ public abstract class AuthBaseResourceConfig extends AbstractAuthResourceConfig 
         register(AuthResource.class);
     }
 
+    @Override
     protected abstract ContainerRequestFilter getAuthFilter();
 
+    @Override
     protected Class<? extends Principal> getPrincipalClass() {
         return Principal.class;
     }

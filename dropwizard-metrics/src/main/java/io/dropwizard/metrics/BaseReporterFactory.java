@@ -134,6 +134,7 @@ public abstract class BaseReporterFactory implements ReporterFactory {
         this.excludes = excludes;
     }
 
+    @Override
     @JsonProperty
     public Optional<Duration> getFrequency() {
         return frequency;

@@ -82,6 +82,7 @@ public class ConsoleReporterFactory extends BaseFormattedReporterFactory {
         this.output = stream;
     }
 
+    @Override
     public ScheduledReporter build(MetricRegistry registry) {
         return ConsoleReporter.forRegistry(registry)
                               .convertDurationsTo(getDurationUnit())

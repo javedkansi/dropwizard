@@ -7,6 +7,7 @@ import io.dropwizard.jersey.DropwizardResourceConfig;
 
 public class OAuthCustomProviderTest extends AuthBaseTest<OAuthCustomProviderTest.BasicAuthTestResourceConfig> {
     public static class BasicAuthTestResourceConfig extends AuthBaseResourceConfig {
+        @Override
         protected AuthFilter getAuthFilter() {
             return new OAuthCredentialAuthFilter.Builder<>()
                 .setAuthenticator(AuthUtil.getMultiplyUsersOAuthAuthenticator(ImmutableList.of(ADMIN_USER, ORDINARY_USER)))

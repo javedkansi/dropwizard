@@ -108,6 +108,7 @@ public class DefaultLoggingFactory implements LoggingFactory {
         this.appenders = ImmutableList.copyOf(appenders);
     }
 
+    @Override
     public void configure(MetricRegistry metricRegistry, String name) {
         LoggingUtil.hijackJDKLogging();
 
@@ -150,6 +151,7 @@ public class DefaultLoggingFactory implements LoggingFactory {
         configureInstrumentation(root, metricRegistry);
     }
 
+    @Override
     public void stop() {
         // Should acquire the lock to avoid concurrent listener changes
         CHANGE_LOGGER_CONTEXT_LOCK.lock();
